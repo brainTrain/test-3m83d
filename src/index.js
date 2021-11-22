@@ -1,5 +1,4 @@
 const page = require('3m83d');
-import _ from 'lodash';
 
 function component() {
   const element = document.createElement('main');
@@ -7,6 +6,8 @@ function component() {
 
   const iframe = document.createElement('iframe');
   iframe.style = 'width: 90vw; height: 90vh; box-sizing: border-box;';
+  // set the compiled bundle from 3m83d as the srcdoc for the iframe
+  // NOTE: images are not being served, but css and js are
   iframe.srcdoc = page.default;
 
   element.appendChild(iframe);
